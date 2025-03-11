@@ -41,6 +41,8 @@ Classification is a **supervised learning task** where the goal is to categorize
 - **Sentiment Analysis**: Identifying positive, negative, or neutral sentiment in text.
 - **Image Recognition**: Detecting objects in images (e.g., dog vs. cat).
 
+![apps1](images/apps1.png)
+
 ### Different Classification Models (Eager vs. Lazy Learners)
 Here’s a quick look at classification models and their key characteristics:
 
@@ -139,9 +141,9 @@ $$
 
 
 ### Coding Time
-- [KNN implemented from scratch](knn.ipynb)
-- [KNN using scikit-learn](knn.ipynb)
-- Task 1!
+- [KNN implemented from scratch](notebooks/knn_scratch.ipynb)
+- [KNN using scikit-learn](notebooks/knn_builtin.ipynb)
+- TASK 1!
 
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
@@ -172,9 +174,8 @@ $$ L = -\frac{1}{m} \sum_{i=1}^{m} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1
 - ❌ **Sensitive to outliers**
 
 ### Coding Time
-- [KNN implemented from scratch](knn.ipynb)
-- [KNN using scikit-learn](knn.ipynb)
-- Task 2!
+- [Logistic Regression implemented from scratch](notebooks/logistic_regression_scratch.ipynb) **-> Task 2!**
+- [Logistic Regression using SKlearn](notebooks/logistic_regression_builtin.ipynb)
 
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
