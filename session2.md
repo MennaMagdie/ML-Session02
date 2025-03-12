@@ -4,14 +4,15 @@
 1. **Recap**
 2. **Classification (What is it?, Types, Use cases)**
 3. **K Nearest Neighbors**
-4. **Performance Evaluation**
-5. **Logistic Regression**
+4. **Logistic Regression**
+5. **Performance Evaluation**
 6. **Comparison**
 
 ## Introduction
 ## 1. Recap on Previous Session  
 Before diving into classification, let's briefly recap the key concepts covered in the previous session:  
 - **Supervised vs. Unsupervised Learning**: Understanding labeled vs. unlabeled data.  
+
 ![ml](images/ml.png)
 - **Basic ML Workflow**: Data preprocessing, model training, evaluation, and deployment.  
 - **Feature Engineering & Selection**: How to improve model performance by selecting relevant features.  
@@ -26,14 +27,17 @@ Classification is a **supervised learning task** where the goal is to categorize
 
 ### Types of Classification:
 
+- **Binary Classification**: Two possible labels (e.g., spam vs. not spam).
+- **Multiclass Classification**: More than two labels (e.g., digit recognition: 0-9).
+- **Multilabel Classification**: Each instance can belong to multiple classes simultaneously (e.g., tagging multiple topics in a news article).
+
+
 ![2](images/classific_types2.png)
+
 
 ![class-types](images/classific_types.png)
 
 
-- **Binary Classification**: Two possible labels (e.g., spam vs. not spam).
-- **Multiclass Classification**: More than two labels (e.g., digit recognition: 0-9).
-- **Multilabel Classification**: Each instance can belong to multiple classes simultaneously (e.g., tagging multiple topics in a news article).
 
 ### Real-world Use Cases:
 - **Email Spam Detection**: Classifying emails as spam or not.
