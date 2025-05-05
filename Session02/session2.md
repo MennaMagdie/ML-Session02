@@ -261,6 +261,5 @@ Extra stuff:
 
 Resources:
 
-https://www.datacamp.com/blog/classification-machine-learning
-
-https://cohere.com/blog/classification-eval-metrics
+- https://www.datacamp.com/blog/classification-machine-learning
+- https://cohere.com/blog/classification-eval-metrics
