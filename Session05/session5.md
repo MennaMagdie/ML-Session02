@@ -254,35 +254,152 @@ As dimensions increase, the difference between the nearest and farthest neighbor
 
 --------------------
 
+## **3.3 Principal Component Analysis (PCA)**
+
+PCA works by transforming high-dimensional data into a lower-dimensional space while maximizing the variance (or spread) of the data in the new space. This helps preserve the most important patterns and relationships in the data.
+
+> Note: It prioritizes the directions where the data varies the most (because more variation = more useful information.)
+
+> Since PCA is a linear model, this mapping will be a projection
 
 
+### Let’s understand it’s working in simple terms:
 
+Imagine you’re looking at a messy cloud of data points (like stars in the sky) and want to simplify it. PCA helps you find the “most important angles” to view this cloud so you don’t miss the big patterns.
 
+> SOWAR EL PPT OF VIDEO
 
-.
+Before diving into PCA, we need a quick:
 
-.
+## **Maths Recap**
 
-.
+### • Mean
+The average of a set of values. For a variable \( x \):
 
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-
+$$
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+$$
 
 ---
+
+### • Variance
+Measures how much the values of a variable differ from the mean:
+
+$$
+\text{Var}(x) = \frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2
+$$
+
+---
+
+### • Covariance
+Measures how two variables vary together. A positive value indicates that the variables increase together, while a negative value indicates an inverse relationship:
+
+$$
+\text{Cov}(x_1, x_2) = \frac{1}{n - 1} \sum_{i=1}^{n} (x_{1i} - \bar{x}_1)(x_{2i} - \bar{x}_2)
+$$
+
+---
+
+### • Covariance Matrix
+A square matrix that contains covariances between multiple variables. For a dataset with \( d \) features, it's a \( d \times d \) matrix where each element \( (i, j) \) is:
+
+$$
+\text{Cov}(x_i, x_j)
+$$
+
+It helps us understand relationships between all pairs of features.
+
+---
+
+### • Eigenvalue Decomposition
+A method of breaking down a square matrix into its eigenvalues and eigenvectors. For a square matrix \( A \):
+
+$$
+A \vec{v} = \lambda \vec{v}
+$$
+
+- \( v \) is an **eigenvector**
+- \( lambda \) is its **eigenvalue**
+
+This is used in PCA to find the principal components (directions of maximum variance).
+
+
+
+
+
+## **Step by step for PCA: **
+
+
+### 1. **Standardization**
+
+Since PCA is affected by the scale of the data, it is important to standardize the dataset.
+
+$$
+Z = \frac{X - \mu}{\sigma}
+$$
+
+- Where $$ \mu $$ is the mean  and $$  \sigma $$ is the standard deviation. 
+- This step ensures that each feature contributes equally.  
+
+
+
+### 2. **Compute the Covariance Matrix**
+
+The covariance matrix helps understand the relationships between different features.
+$$
+\text{cov}(x_1, x_2) = \frac{1}{n-1} \sum_{i=1}^{n} (x_{1i} - \bar{x}_1)(x_{2i} - \bar{x}_2)
+$$
+<!-- 
+$$
+\text{Cov}(X) = \frac{1}{n-1}(X^T X)
+$$ -->
+
+- A symmetric matrix showing covariance between each pair of features.
+
+
+### 3. **Find the “Magic Directions” (Principal Components)**
+
+- Eigenvectors represent the directions of the new feature space.
+- Eigenvalues determine their magnitude (importance).
+
+
+### 4. **Sort Eigenvalues and Select Top k Eigenvectors**
+
+- Sort the eigenvalues in descending order.
+- Select the top **k** eigenvectors corresponding to the **k** largest eigenvalues.
+- These eigenvectors form the **principal components**.
+
+
+### 5. **Transform the Original Dataset**
+
+- Project the original data onto the new **k-dimensional** feature subspace using:
+
+$$
+Y = X \cdot W
+$$
+
+- Where \( W \) is the matrix of selected eigenvectors (principal components).
+- The result is the transformed dataset with reduced dimensions.
+
+
+## Summary
+
+| Step | Description |
+|------|-------------|
+| 1 | Standardize the dataset |
+| 2 | Calculate the covariance matrix |
+| 3 | Compute eigenvalues and eigenvectors |
+| 4 | Choose top k eigenvectors |
+| 5 | Reconstruct or transform the data |
+
+
+
 ---
 ## Resources
 1. [What is unsupervised learning?](https://cloud.google.com/discover/what-is-unsupervised-learning)
 2. [K-Means Clustering Algorithm](https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-k-means-clustering/)
 3. [The Curse of Dimensionality](https://www.youtube.com/watch?v=9Tf-_mJhOkU)
 4. [Feature Selection vs Feature Extraction](https://vitalflux.com/machine-learning-feature-selection-feature-extraction/#google_vignette)
+5. [PCA video (highly recommended)](https://www.youtube.com/watch?v=g-Hb26agBFg)
+6. [PCA article](https://www.geeksforgeeks.org/principal-component-analysis-pca/)
+7. University of Toronto, Introduction to Machine Learning Course
