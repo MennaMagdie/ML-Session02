@@ -393,13 +393,6 @@ $$
 ### 2. **Compute the Covariance Matrix**
 
 The covariance matrix helps understand the relationships between different features.
-$$
-\text{cov}(x_1, x_2) = \frac{1}{n-1} \sum_{i=1}^{n} (x_{1i} - \bar{x}_1)(x_{2i} - \bar{x}_2)
-$$
-<!-- 
-$$
-\text{Cov}(X) = \frac{1}{n-1}(X^T X)
-$$ -->
 
 - A symmetric matrix showing covariance between each pair of features.
 
