@@ -10,6 +10,10 @@ In this session, we will explore key concepts in **Unsupervised Learning**, focu
 
 ---
 
+![alt text](images/image.png)
+
+---
+
 ## 1. What is Unsupervised Learning?
 
 Unsupervised learning is a type of machine learning where the model is given **unlabeled data**, and the goal is to discover **underlying patterns**, **groupings**, or **structures** without explicit supervision.
@@ -19,6 +23,8 @@ The algorithm tries to:
 - Find clusters or groups (clustering)
 - Reduce dimensionality (feature extraction)
 - Detect anomalies or unusual patterns
+
+
 
 ---
 
@@ -56,21 +62,56 @@ Dimensionality reduction extracts important features from the dataset, reducing 
    - **Principal Component Analysis (PCA)** – Projects data into lower-dimensional space while preserving variance
    - **t-SNE, UMAP** – Used for visualization of high-dimensional data
 
-<!-- .
+.
 
 3. **Association**
 
-Association rule mining is a rule-based approach to reveal interesting relationships between data points in large datasets. Unsupervised learning algorithms search for frequent if-then associations—also called rules—to discover correlations and co-occurrences within the data and the different connections between data objects.  -->
+Association rule mining is a rule-based approach to reveal interesting relationships between data points in large datasets. Unsupervised learning algorithms search for frequent if-then associations—also called rules—to discover correlations and co-occurrences within the data and the different connections between data objects. 
 
 ---
 
 ## Real-Life Applications of Unsupervised Learning
 
-- **Customer Segmentation** – Grouping customers based on purchasing behavior
-- **Image Compression** – Using PCA to reduce pixel dimensions
-- **Anomaly Detection** – Identifying fraudulent transactions or system failures
-- **Topic Modeling** – Grouping similar documents or news articles
-- **Music Recommendation** – Clustering songs/users by listening patterns
+### 1. Customer Segmentation in Retail or E-commerce (Clustering)
+
+**Real-life angle:** Think of how Netflix(aw haga tanya 3shan moqat3a) groups users to recommend movies, or how Zara(same here bayen) sends different offers to different customer groups.
+
+- **Technique:** Clustering (e.g., K-Means)
+- **Purpose:** Group customers by behavior (purchases, location, age)
+- **Outcome:** Personalized marketing and recommendations without needing labeled data
+
+---
+
+### 2. Product Placement in Supermarkets (Association Rules)
+
+**Real-life angle:** Why are chips and soda often placed together?
+
+- **Technique:** Market Basket Analysis (e.g., Apriori Algorithm)
+- **Purpose:** Discover patterns in what people buy together
+- **Outcome:** Smart product placement to increase sales
+
+---
+
+### 3. Organizing Photos on Your Phone (Clustering + Dimensionality Reduction)
+
+**Real-life angle:** Your phone creates albums like "Wedding," "Vacation," or "Friends" automatically.
+
+- **Technique:** Clustering photos by face, location, or color histograms
+- **Purpose:** Auto-grouping similar photos
+- **Outcome:** Organized albums without manually tagging every photo
+
+---
+
+### 4. Music Recommendation Systems (Clustering + Embedding Spaces)
+
+**Real-life angle:** Spotify recommends songs that match your vibe.
+
+- **Technique:** Clustering audio features (tempo, genre, mood)
+- **Purpose:** Group similar songs/users
+- **Outcome:** Discover music you’ll probably like — without labeled preferences
+
+
+
 
 ---
 
@@ -168,6 +209,7 @@ millions of data points.
 
 3. **Assumption of Spherical Clusters**:
    - K-Means assumes that clusters are spherical (circular in 2D) and of similar size. It struggles with clusters that are non-spherical, uneven in size, or have varying densities.
+   - **keywords** search for GMM/ EM algos
 
 4. **Sensitivity to Outliers**:
    - K-Means is highly sensitive to outliers because the centroid is the mean of all points in the cluster, and outliers can significantly skew the mean, distorting the results.
@@ -186,6 +228,9 @@ A technique used to determine the optimal number of clusters (K) for K-Means clu
 
 2. **Calculate WSS (Inertia/ Within-Cluster Sum of Squares)**:
    - For each K, calculate the **within-cluster sum of squared errors (WSS)**, which measures the compactness of the clusters (i.e., how close the data points are to their centroids).
+   - WCSS = ∑ᵢ=1ᵏ ∑ₓ∈Cᵢ ||x - μᵢ||²
+
+
 
 3. **Plot the Elbow Curve**:
    - Plot K (number of clusters) on the x-axis and the WSS on the y-axis. You’ll typically see a steep drop in WSS as K increases, but after a certain point, the rate of decrease slows down.
@@ -419,3 +464,4 @@ While unsupervised learning can be more challenging to validate, it's incredibly
 5. [PCA video (highly recommended)](https://www.youtube.com/watch?v=g-Hb26agBFg)
 6. [PCA article](https://www.geeksforgeeks.org/principal-component-analysis-pca/)
 7. University of Toronto, Introduction to Machine Learning Course
+8. [Eigen vectors & eigen values](https://www.youtube.com/watch?v=PFDu9oVAE-g)
